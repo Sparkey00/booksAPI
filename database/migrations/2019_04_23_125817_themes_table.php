@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAuthorsTable extends Migration
+class ThemesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateAuthorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('authors', function (Blueprint $table) {
-            $table->bigIncrements('author_id');
-            $table->string('full_name');
-            $table->integer('date_of_birth');
+        Schema::create('themes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('theme_id');
+            $table->string('theme_name');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateAuthorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('themes');
     }
 }
